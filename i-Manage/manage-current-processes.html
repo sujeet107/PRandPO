@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Current Processes</title>
+    <link rel="stylesheet" href="admin-dashboard-styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="assign-new-role.html">Assign New Role</a></li>
+                <li><a href="assign-new-vendor.html">Assign New Vendor</a></li>
+                <li><a href="pr-po-process-making.html">PR and PO Process Making</a></li>
+                <li><a href="all-approval-processes.html">All Approval Processes</a></li>
+                <li><a href="manage-current-processes.html" class="active">Manage Current Processes</a></li>
+                <li><a href="admin-login.html">Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="pr-po-process-making.html">PR and PO Process Making</a></li>
+                    <li><a href="all-approval-processes.html">All Approval Processes</a></li>
+                    <li><a href="manage-current-processes.html" class="active">Manage Current Processes</a></li>
+                </ul>
+            </nav>
+            <header>
+                <h1>Manage Current Processes</h1>
+                <p>View, edit, and delete current approval processes.</p>
+            </header>
+            <section class="process-list-section">
+                <h2>Current Approval Processes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Process Name</th>
+                            <th>Department</th>
+                            <th>Approval Steps</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="currentProcessList">
+                        <!-- Current approval processes will be populated here -->
+                    </tbody>
+                </table>
+            </section>
+            <section id="edit-section" class="edit-section" style="display: none;">
+                <h2>Edit Process</h2>
+                <form id="editProcessForm">
+                    <div class="form-group">
+                        <label for="editProcessName">Process Name:</label>
+                        <input type="text" id="editProcessName" name="editProcessName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDepartment">Department:</label>
+                        <input type="text" id="editDepartment" name="editDepartment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editSteps">Approval Steps (Comma separated):</label>
+                        <input type="text" id="editSteps" name="editSteps" required>
+                    </div>
+                    <button type="submit">Save Changes</button>
+                    <button type="button" id="cancelEdit">Cancel</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="manage-current-processes.js"></script>
+</body>
+</html>

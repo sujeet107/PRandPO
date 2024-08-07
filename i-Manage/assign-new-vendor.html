@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign New Vendor</title>
+    <link rel="stylesheet" href="admin-dashboard-styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Assign New Vendor</h2>
+            <ul>
+                <li><a href="department1-dashboard-U6.html">Dashboard</a></li>
+                <li><a href="assign-new-role.html">Assign New Role</a></li>
+                <li><a href="assign-new-vendor.html" class="active">Assign New Vendor</a></li>
+                <li><a href="pr-po-process.html">PR and PO Process Making</a></li>
+                <li><a href="pr-po-status.html">PR & PO Status and Full Module</a></li>
+                <li><a href="admin-login.html">Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Assign New Vendor</h1>
+                <p>Fill in the details to assign a new vendor.</p>
+            </header>
+            <section class="form-section">
+                <form id="assignVendorForm">
+                    <div class="form-group">
+                        <label for="vendorCode">Vendor Code:</label>
+                        <input type="text" id="vendorCode" name="vendorCode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vendorName">Vendor Name:</label>
+                        <input type="text" id="vendorName" name="vendorName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountManager">Account Manager:</label>
+                        <input type="text" id="accountManager" name="accountManager">
+                    </div>
+                    <div class="form-group">
+                        <label for="vendorContact">Vendor Contact No.:</label>
+                        <input type="text" id="vendorContact" name="vendorContact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email ID:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="panNo">PAN No.:</label>
+                        <input type="text" id="panNo" name="panNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanNo">TAN No.:</label>
+                        <input type="text" id="tanNo" name="tanNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gstinNo">GSTIN No.:</label>
+                        <input type="text" id="gstinNo" name="gstinNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="uploadDoc">Upload Doc:</label>
+                        <input type="file" id="uploadDoc" name="uploadDoc" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <h2>Banking Details:</h2>
+                    <div class="form-group">
+                        <label for="bankName">Bank Name:</label>
+                        <input type="text" id="bankName" name="bankName">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountNo">Account No.:</label>
+                        <input type="text" id="accountNo" name="accountNo">
+                    </div>
+                    <div class="form-group">
+                        <label for="holderName">Holder Name:</label>
+                        <input type="text" id="holderName" name="holderName">
+                    </div>
+                    <div class="form-group">
+                        <label for="ifscCode">IFSC Code:</label>
+                        <input type="text" id="ifscCode" name="ifscCode">
+                    </div>
+                    <div class="form-group">
+                        <label for="swiftCode">Swift Code:</label>
+                        <input type="text" id="swiftCode" name="swiftCode">
+                    </div>
+                    <div class="form-group">
+                        <label for="micrCode">MICR Code:</label>
+                        <input type="text" id="micrCode" name="micrCode">
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="assign-new-vendor.js"></script>
+</body>
+</html>

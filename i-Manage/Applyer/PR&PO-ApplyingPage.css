@@ -1,0 +1,365 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #b19595;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #e36159; /* Red background for navbar */
+    color: #000000; /* Black text color for navbar */
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    gap: 15px; /* Space between items */
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+.navbar ul li a {
+    color: #000000; /* Black text color for navbar links */
+    text-decoration: none;
+}
+
+.navbar ul li a.active {
+    font-weight: bold;
+}
+
+.container {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    margin-top: 70px; /* Adjusted margin-top to make room for navbar */
+    padding-top: 70px; /* Added padding-top to ensure header isn't hidden */
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    /* Ensure the container allows scroll if content is too large */
+    overflow-wrap: anywhere;
+}
+
+.container header {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.container header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #4070f4;
+}
+
+.container form {
+    position: relative;
+    margin-top: 10px;
+    min-height: 1200px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.container form .form {
+    position: relative;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+.container form .form.second {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+
+form.secActive .form.second {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+form.secActive .form.first {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+
+.container form .title {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+
+.container form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field {
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.input-field label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+
+.input-field input, select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.input-field input:focus, .input-field select:focus {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+
+.input-field select, .input-field input[type="date"] {
+    color: #707070;
+}
+
+.input-field input[type="date"]:valid {
+    color: #333;
+}
+
+.container form button, .backBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #4070f4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.container form .btnText {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+form button:hover {
+    background-color: #265df2;
+}
+
+form button i, .backBtn i {
+    margin: 0 6px;
+}
+
+form .backBtn i {
+    transform: rotate(180deg);
+}
+
+form .buttons {
+    display: flex;
+    align-items: center;
+}
+
+form .buttons button, .backBtn {
+    margin-right: 14px;
+}
+
+@media (max-width: 750px) {
+    .container form {
+        overflow-y: scroll;
+    }
+
+    .container form::-webkit-scrollbar {
+        display: none;
+    }
+
+    form .fields .input-field {
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field {
+        width: 100%;
+    }
+}
+
+#line-items {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#line-items th, #line-items td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#line-items th {
+    background-color: #f2f2f2;
+}
+
+.remove-btn {
+    background-color: #f44336; /* Red background */
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    cursor: pointer;
+    /* Ensure the button doesn't overflow */
+    max-width: 100px;
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+/* Container Styling */
+.container1 {
+    margin-top: 100px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    margin-top: 70px; /* Adjusted margin-top to make room for navbar */
+    padding-top: 70px; /* Added padding-top to ensure header isn't hidden */
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    /* Ensure the container allows scroll if content is too large */
+    overflow-wrap: anywhere;
+}
+
+.container1 header {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Table Styling */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+#status-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#status-table thead {
+    background-color: #f2f2f2;
+}
+
+#status-table th, #status-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#status-table th {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#status-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.containernav{
+    width: 100%;
+    color: #000000; /* Black text color for navbar */
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+.containernav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    gap: 15px; /* Space between items */
+    font-weight: bold;
+}
+
+.containernav ul li {
+    margin: 0;
+}
+
+.containernav ul li a {
+    color: #000000; /* Black text color for navbar links */
+    text-decoration: none;
+}

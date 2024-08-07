@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Request and Purchase Order Form</title>
+    <link rel="stylesheet" href="department1PRapplying.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2>Department 1 Dashboard</h2>
+            <ul>
+                <li><a href="department1-dashboard-U1.html">Home</a></li>
+                <li><a href="apply-pr-po.html" class="active">Apply for PR and PO</a></li>
+                <li><a href="department1-partialpending.html">Partial Pending PR & PO</a></li>
+                <li><a href="pr-approving-page.html">Status of PR</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="department1-login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="sidebar">
+        <!-- Sidebar content moved from here -->
+    </aside>
+    <main>
+        <header>
+            <h1>Purchase Request and Purchase Order Form</h1>
+        </header>
+        <form id="po-form">
+            <div class="">
+
+                <!-- Billing Address Section -->
+                <h2>Billing Address</h2>
+                <label for="billing-company-name">Billing Address:</label>
+                <select id="billing-company-name" name="billing-company-name" onchange="updateBillingLocations()">
+                    <option value="">Select Company</option>
+                    <option value="IMI">IMI</option>
+                    <option value="IEBCI">IEBCI</option>
+                </select>
+        
+                <label for="billing-location">Billing Location:</label>
+                <select id="billing-location" name="billing-location" onchange="updateBillingDetails()">
+                    <option value="">Select Location</option>
+                </select>
+        
+                <label for="Billing-Address">Billing Address:</label>
+                <input type="text" id="Billing-Address" name="Billing-Address" readonly>
+        
+                <label for="Billing-Telephone-no">Telephone no:</label>
+                <input type="text" id="Billing-Telephone-no" name="Billing-Telephone-no" readonly>
+        
+                <label for="Billing-Fax-no">Fax no.:</label>
+                <input type="text" id="Billing-Fax-no" name="Billing-Fax-no" readonly>
+        
+                <label for="Billing-CIN-no">CIN no.:</label>
+                <input type="text" id="Billing-CIN-no" name="Billing-CIN-no" readonly>
+        
+                <label for="Billing-GSTIN-no">GSTIN no.:</label>
+                <input type="text" id="Billing-GSTIN-no" name="Billing-GSTIN-no" readonly>
+        
+                <!-- Shipping Address Section -->
+                <h2>Shipping Address</h2>
+                <label for="shipping-company-name">Shipping Address:</label>
+                <select id="shipping-company-name" name="shipping-company-name" onchange="updateShippingLocations()">
+                    <option value="">Select Company</option>
+                    <option value="IMI">IMI</option>
+                    <option value="IEBCI">IEBCI</option>
+                </select>
+        
+                <label for="shipping-location">Shipping Location:</label>
+                <select id="shipping-location" name="shipping-location" onchange="updateShippingDetails()">
+                    <option value="">Select Location</option>
+                </select>
+        
+                <label for="Shipping-Address">Shipping Address:</label>
+                <input type="text" id="Shipping-Address" name="Shipping-Address" readonly>
+        
+                <label for="Shipping-Telephone-no">Telephone no:</label>
+                <input type="text" id="Shipping-Telephone-no" name="Shipping-Telephone-no" readonly>
+        
+                <label for="Shipping-Fax-no">Fax no.:</label>
+                <input type="text" id="Shipping-Fax-no" name="Shipping-Fax-no" readonly>
+        
+                <label for="Shipping-CIN-no">CIN no.:</label>
+                <input type="text" id="Shipping-CIN-no" name="Shipping-CIN-no" readonly>
+        
+                <label for="Shipping-GSTIN-no">GSTIN no.:</label>
+                <input type="text" id="Shipping-GSTIN-no" name="Shipping-GSTIN-no" readonly>
+        
+                <h2>Background/Subject</h2>
+                <textarea id="background-subject" name="background-subject" rows="4" cols="50" placeholder="Enter the background or subject here..."></textarea>
+        
+                <label for="po-number">Purchase Order Number:</label>
+                <input type="text" id="po-number" name="po-number" pattern="\d+">
+        
+                <label for="pr-number">Purchase Request Number:</label>
+                <input type="text" id="pr-number" name="pr-number" pattern="\d+">
+        
+                <label for="po-date">Purchase Order / Purchase Request Date:</label>
+                <input type="date" id="po-date" name="po-date" readonly>
+        
+                <h2>Vendor Details</h2>
+                <label for="vendor-code">Vendor Code:</label>
+                <input type="text" id="vendor-code" name="vendor-code" onblur="fetchVendorName()">
+        
+                <label for="vendor-name">Vendor Name:</label>
+                <input type="text" id="vendor-name" name="vendor-name" readonly>
+        
+                <!-- Budget Type Section -->
+                <h2>Budget Type</h2>
+                <label for="budget-type">Budget Type:</label>
+                <select id="budget-type" name="budget-type" onchange="toggleGLFields()">
+                    <option value="">Select Budget Type</option>
+                    <option value="Opex">Opex</option>
+                    <option value="Capex">Capex</option>
+                </select>
+        
+                <div id="gl-fields" class="hidden">
+                    <label for="gl-code">Opex Master GL Code:</label>
+                    <input type="text" id="gl-code" name="gl-code">
+        
+                    <label for="gl-description">GL Description:</label>
+                    <input type="text" id="gl-description" name="gl-description">
+                </div>
+        
+                <h2>Budget Code / Project Code</h2>
+                <label for="budget-code">Budget Code / Project Code:</label>
+                <input type="text" id="budget-code" name="budget-code" oninput="fetchBudgetDetails()">
+        
+                <label for="unit-code">Unit Code:</label>
+                <input type="text" id="unit-code" name="unit-code" readonly>
+        
+                <label for="division">Division:</label>
+                <input type="text" id="division" name="division" readonly>
+        
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" readonly>
+        
+                <h2>Expected Delivery Date</h2>
+                <label for="delivery-date-from">From:</label>
+                <input type="date" id="delivery-date-from" name="delivery-date-from">
+        
+                <label for="delivery-date-to">To:</label>
+                <input type="date" id="delivery-date-to" name="delivery-date-to">
+        
+                <h2>Payment Terms</h2>
+                <label for="payment-terms">Payment Terms:</label>
+                <textarea id="payment-terms" name="payment-terms" rows="4" cols="50" placeholder="Enter payment terms here..."></textarea>
+        
+                <label for="upload">Upload Files:</label>
+                <input type="file" id="upload" name="upload" multiple>
+        
+                <h2>Line Items</h2>
+                <table id="line-items">
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Description</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" name="description1"></td>
+                            <td><input type="number" name="unit-price1" oninput="calculateTotal(this)"></td>
+                            <td><input type="number" name="quantity1" oninput="calculateTotal(this)"></td>
+                            <td><input type="text" name="total1" readonly></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" onclick="addItem()">Add Item</button>
+        
+                <label for="total-amount">Total Amount:</label>
+                <input type="text" id="total-amount" name="total-amount" readonly>
+        
+                <button type="submit">Submit</button>
+            </div>
+        </form>        
+    </main>
+    <script src="department1PRapplying.js"></script>
+</body>
+</html>

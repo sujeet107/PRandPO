@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign New Role</title>
+    <link rel="stylesheet" href="admin-dashboard-styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Assign New Role</h2>
+            <ul>
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="assign-new-role.html" class="active">Assign New Role</a></li>
+                <li><a href="assign-new-vendor.html">Assign New Vendor</a></li>
+                <li><a href="pr-po-process.html">PR and PO Process Making</a></li>
+                <li><a href="pr-po-status.html">PR & PO Status and Full Module</a></li>
+                <li><a href="admin-login.html">Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Assign New Role</h1>
+                <p>Assign roles to users based on their authority.</p>
+            </header>
+            <section class="form-section">
+                <form id="assignRoleForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email ID:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role:</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select Role</option>
+                            <option value="Budget Approver">Budget Approver</option>
+                            <option value="Department Approver">Department Approver</option>
+                            <option value="CFT-1">CFT-1</option>
+                            <option value="CFT-2">CFT-2</option>
+                            <option value="TOP Management">TOP Management</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit">Assign Role</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="assign-new-role.js"></script>
+</body>
+</html>

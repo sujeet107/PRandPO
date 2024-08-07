@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="PR&PO-ApplyingPage.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Purchase Request and Purchase Order Form</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2>Department 1 Dashboard</h2>
+            <ul>
+                <li><a href="pr-approving-page.html">Home</a></li>
+                <li><a href="PR&PO-ApplyingPage.html" class="active">Apply for PR and PO</a></li>
+                <li><a href="pr-approving-page.html">Status of PR</a></li>
+                <li><a href="file:///C:/Users/Admin/Documents/i-Manage/department1-login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="sidebar">
+        <!-- Sidebar content moved from here -->
+    </aside>
+    <div class="container">
+        <header>Purchase Request and Purchase Order Form</header>
+
+        <form id="po-form">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Billing Address</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="billing-company-name">Billing Address:</label>
+                            <select id="billing-company-name" name="billing-company-name" onchange="updateBillingLocations()">
+                                <option value="">Select Company</option>
+                                <option value="IMI">IMI</option>
+                                <option value="IEBCI">IEBCI</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="billing-location">Billing Location:</label>
+                            <select id="billing-location" name="billing-location" onchange="updateBillingDetails()">
+                                <option value="">Select Location</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="Billing-Address">Billing Address:</label>
+                            <input type="text" id="Billing-Address" name="Billing-Address" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="Billing-Telephone-no">Telephone no:</label>
+                            <input type="text" id="Billing-Telephone-no" name="Billing-Telephone-no" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="Billing-Fax-no">Fax no.:</label>
+                            <input type="text" id="Billing-Fax-no" name="Billing-Fax-no" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="Billing-CIN-no">CIN no.:</label>
+                            <input type="text" id="Billing-CIN-no" name="Billing-CIN-no" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="Billing-GSTIN-no">GSTIN no.:</label>
+                            <input type="text" id="Billing-GSTIN-no" name="Billing-GSTIN-no" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Shipping Address</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="shipping-company-name">Shipping Address:</label>
+                            <select id="shipping-company-name" name="shipping-company-name" onchange="updateShippingLocations()">
+                                <option value="">Select Company</option>
+                                <option value="IMI">IMI</option>
+                                <option value="IEBCI">IEBCI</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="shipping-location">Shipping Location:</label>
+                            <select id="shipping-location" name="shipping-location" onchange="updateShippingDetails()">
+                                <option value="">Select Location</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="Shipping-Address">Shipping Address:</label>
+                            <input type="text" id="Shipping-Address" name="Shipping-Address" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="Shipping-Telephone-no">Telephone no:</label>
+                            <input type="text" id="Shipping-Telephone-no" name="Shipping-Telephone-no" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="Shipping-Fax-no">Fax no.:</label>
+                            <input type="text" id="Shipping-Fax-no" name="Shipping-Fax-no" readonly>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label for="Shipping-CIN-no">CIN no.:</label>
+                            <input type="text" id="Shipping-CIN-no" name="Shipping-CIN-no" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="Shipping-GSTIN-no">GSTIN no.:</label>
+                            <input type="text" id="Shipping-GSTIN-no" name="Shipping-GSTIN-no" readonly>
+                        </div>
+        
+                                
+                    </div>
+                </div>
+
+                <div class="details background">
+                    <span class="title">Background/Subject</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <textarea id="background-subject" name="background-subject" rows="4" cols="50" placeholder="Enter the background or subject here..."></textarea>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="po-number">Purchase Order Number:</label>
+                            <input type="text" id="po-number" name="po-number" pattern="\d+">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="pr-number">Purchase Request Number:</label>
+                            <input type="text" id="pr-number" name="pr-number" pattern="\d+">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="po-date">Purchase Order / Purchase Request Date:</label>
+                            <input type="date" id="po-date" name="po-date" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details vendor">
+                    <span class="title">Vendor Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="vendor-code">Vendor Code:</label>
+                            <input type="text" id="vendor-code" name="vendor-code" onblur="fetchVendorName()">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="vendor-name">Vendor Name:</label>
+                            <input type="text" id="vendor-name" name="vendor-name" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details budget">
+                    <span class="title">Budget Type</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="budget-type">Budget Type:</label>
+                            <select id="budget-type" name="budget-type" onchange="toggleGLFields()">
+                                <option value="">Select Budget Type</option>
+                                <option value="Opex">Opex</option>
+                                <option value="Capex">Capex</option>
+                            </select>
+                        </div>
+
+                        <div id="gl-fields" class="hidden">
+                            <div class="input-field">
+                                <label for="gl-code">Opex Master GL Code:</label>
+                                <input type="text" id="gl-code" name="gl-code">
+                            </div>
+
+                            <div class="input-field">
+                                <label for="gl-description">GL Description:</label>
+                                <input type="text" id="gl-description" name="gl-description">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details project">
+                    <span class="title">Budget Code / Project Code</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="budget-code">Budget Code / Project Code:</label>
+                            <input type="text" id="budget-code" name="budget-code" oninput="fetchBudgetDetails()">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="unit-code">Unit Code:</label>
+                            <input type="text" id="unit-code" name="unit-code" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="division">Division:</label>
+                            <input type="text" id="division" name="division" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="department">Department:</label>
+                            <input type="text" id="department" name="department" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details delivery">
+                    <span class="title">Expected Delivery Date</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="expected-delivery-date">Expected Delivery Date:</label>
+                            <input type="date" id="expected-delivery-date" name="expected-delivery-date">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details payment">
+                    <span class="title">Payment Terms</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="payment-terms">Payment Terms:</label>
+                            <select id="payment-terms" name="payment-terms">
+                                <option value="advanced">Advanced</option>
+                                <option value="cod">Cash on Delivery</option>
+                                <option value="net30">Net 30</option>
+                                <option value="net60">Net 60</option>
+                                <option value="net90">Net 90</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details items">
+                    <span class="title">Line Items</span>
+
+                    <div class="fields" id="line-items">
+                        <table id="line-items">
+                            <thead>
+                                <tr>
+                                    <th>S.No.</th>
+                                    <th>Description</th>
+                                    <th>Unit Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="text" name="description1"></td>
+                                    <td><input type="number" name="unit-price1" oninput="calculateTotal(this)"></td>
+                                    <td><input type="number" name="quantity1" oninput="calculateTotal(this)"></td>
+                                    <td><input type="text" name="total1" readonly></td>
+                                    <td><button type="button" onclick="removeRow(this)" class="remove-btn">Remove</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <button type="button" onclick="addItem()">Add Item</button>
+        
+                    <label for="total-amount">Total Amount:</label>
+                    <input type="text" id="total-amount" name="total-amount" readonly>                </div>
+
+                <div class="details comments">
+                    <span class="title">Additional Comments</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <textarea id="additional-comments" name="additional-comments" rows="4" cols="50" placeholder="Enter any additional comments here..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="submit">
+                        <span class="btnText">Submit</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="PR&PO-ApplyingPage.js"></script>
+</body>
+</html>

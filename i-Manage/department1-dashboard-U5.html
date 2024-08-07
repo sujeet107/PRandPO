@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFT-2 Dashboard</title>
+    <link rel="stylesheet" href="cft2-dashboard-styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>CFT-2 Dashboard</h2>
+            <ul>
+                <li><a href="cft2-dashboard.html" class="active">Home</a></li>
+                <li><a href="cft2-approving-page.html">Approve/Disapprove PR and PO</a></li>
+                <li><a href="cft2-status-page.html">Status of PR and PO</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Welcome to CFT-2 Dashboard</h1>
+                <p>Approve and disapprove PR and PO, and check the status of PR and PO.</p>
+            </header>
+            <section class="dashboard-sections">
+                <div class="dashboard-card" id="approve-pr-po">
+                    <h3>Approve/Disapprove PR and PO</h3>
+                    <p>Approve or disapprove PR and PO applications here.</p>
+                    <a href="cft2-approving-page.html">Approve/Disapprove Now</a>
+                </div>
+                <div class="dashboard-card" id="status-pr-po">
+                    <h3>Status of PR and PO</h3>
+                    <p>Check the current status of your PR and PO applications.</p>
+                    <a href="cft2-status-page.html">View Status</a>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="cft2-dashboard.js"></script>
+</body>
+</html>
