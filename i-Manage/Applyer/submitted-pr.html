@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Purchase Request</title>
+    <link rel="stylesheet" href="PR&PO-ApplyingPage.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h2>Department 1 Dashboard</h2>
+        <ul>
+            <li><a href="pr-approving-page.html">Home</a></li>
+            <li><a href="PR&PO-ApplyingPage.html" class="active">Apply for PR and PO</a></li>
+            <li><a href="pr-approving-page.html">Status of PR</a></li>
+            <li><a href="file:///C:/Users/Admin/Documents/i-Manage/department1-login.html">Logout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container1">
+            <header>
+                <h1>Submitted Purchase Request</h1>
+            </header>
+            <div id="submitted-details"></div>
+            <button onclick="downloadExcel()">Download Excel</button>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            displayPRDetails();
+        });
+
+        function displayPRDetails() {
+            const data = JSON.parse(localStorage.getItem('poFormData'));
+            if (!data) return;
+
+            const submittedDetails = document.getElementById('submitted-details');
+            let html = '<h2>Submitted Purchase Request Details</h2>';
+
+            for (const [key, value] of Object.entries(data)) {
+                html += `<p><strong>${key.replace(/-/g, ' ')}:</strong> ${value}</p>`;
+            }
+
+            submittedDetails.innerHTML = html;
+        }
+
+        function downloadExcel() {
+            const data = JSON.parse(localStorage.getItem('poFormData'));
+            if (!data) return;
+
+            const worksheet = XLSX.utils.json_to_sheet([data]);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+            XLSX.writeFile(workbook, 'Purchase_Request.xlsx');
+        }
+    </script>
+</body>
+</html>

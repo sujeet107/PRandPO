@@ -1,0 +1,247 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #e36159; /* Red background for navbar */
+    color: #000000; /* Black text color for navbar */
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    gap: 15px; /* Space between items */
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+.navbar ul li a {
+    color: #000000; /* Black text color for navbar links */
+    text-decoration: none;
+}
+
+.navbar ul li a.active {
+    font-weight: bold;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333333; /* Dark grey color for sidebar */
+    color: #ecf0f1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    top: 60px; /* Adjust based on navbar height */
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a.active {
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    padding: 10px;
+    margin-right: 50px;
+    margin-left: 250px; /* Adjust based on sidebar width */
+    margin-top: 70px; /* Adjust based on navbar height */
+    overflow-y: auto;
+}
+
+header {
+    background: #e36159;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+form table {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form select, form button, form table {
+    width: 33%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+form table, form th, form td {
+    border: 1px solid #ddd;
+}
+
+form th, form td {
+    padding: 8px;
+    text-align: left;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+.pr-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.pr-table th, .pr-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.pr-table thead tr {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Form Layout */
+#po-form {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Form Grid Layout */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 15px; /* Space between columns */
+    margin-bottom: 15px; /* Space below the row */
+}
+
+/* Styling for labels and inputs within the form-row */
+.form-row label,
+.form-row select,
+.form-row input {
+    font-size: 0.75rem; /* Smaller font size */
+}
+
+.form-row label {
+    margin-bottom: 5px;
+}
+
+.form-row input,
+.form-row select {
+    max-width: 100%; /* Ensure inputs and selects are responsive */
+    width: 100%;
+}
+
+/* Input sizing adjustments */
+.form-row input[type="text"],
+.form-row select {
+    max-width: calc(100% - 20px); /* Adjust width considering the gap */
+}
+
+/* Adjustments for table and other elements */
+#line-items {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#line-items th, #line-items td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+}
+
+#line-items thead tr {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.75rem;
+}
+
+button:hover {
+    background-color: #45a049;
+}

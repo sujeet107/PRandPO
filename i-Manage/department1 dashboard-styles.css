@@ -1,0 +1,141 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    background-color: #e36159;
+    color: #ecf0f1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar h2 {
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    overflow-y: auto;
+}
+
+/* Header styles */
+header {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #7f8c8d;
+}
+
+/* Dashboard sections */
+.dashboard-sections {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.dashboard-card a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dashboard-card a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-card {
+        padding: 15px;
+        max-width: 100%;
+    }
+}

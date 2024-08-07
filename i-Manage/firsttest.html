@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikihen Seat</title>
+    <style id="dynamic-style">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007BFF;
+            text-align: center;
+        }
+        .product-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .description {
+            margin-top: 20px;
+        }
+        .features {
+            margin-top: 20px;
+        }
+        .feature-item {
+            background: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+        form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        form h2 {
+            color: #007BFF;
+        }
+        form .form-group {
+            margin-bottom: 15px;
+        }
+        form .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        form .form-group input,
+        form .form-group textarea,
+        form .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        form .form-group textarea {
+            resize: vertical;
+        }
+        form .form-group button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        form .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slides img {
+            max-width: 100%;
+            height: auto;
+        }
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .control-button {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .control-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mikihen Seat</h1>
+        <img src="https://via.placeholder.com/800x400?text=Mikihen+Seat" alt="Mikihen Seat" class="product-image">
+        <div class="description">
+            <p>Welcome to the Mikihen Seat! Our seat offers unmatched comfort and modern design to enhance your seating experience. Whether it's for your office, living room, or any other space, Mikihen Seat combines style with functionality.</p>
+        </div>
+        <div class="features">
+            <h2>Features:</h2>
+            <div class="feature-item">✅ Ergonomic design for maximum comfort</div>
+            <div class="feature-item">✅ High-quality materials for durability</div>
+            <div class="feature-item">✅ Available in various colors and styles</div>
+            <div class="feature-item">✅ Easy to assemble</div>
+        </div>
+        <div class="slider">
+            <div class="slides">
+                <img src="https://via.placeholder.com/800x400?text=Document+1" alt="Document 1">
+                <img src="https://via.placeholder.com/800x400?text=Document+2" alt="Document 2">
+                <img src="https://via.placeholder.com/800x400?text=Document+3" alt="Document 3">
+            </div>
+            <div class="controls">
+                <button class="control-button" id="prev">&#10094;</button>
+                <button class="control-button" id="next">&#10095;</button>
+            </div>
+        </div>
+        <form id="pr-po-form" action="/submit-pr-po" method="post">
+            <h2>Add Content for PR and PO</h2>
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Your Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="request-type">Type of Request:</label>
+                <select id="request-type" name="request-type" required>
+                    <option value="">Select Request Type</option>
+                    <option value="pr">Purchase Request (PR)</option>
+                    <option value="po">Purchase Order (PO)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="details">Details:</label>
+                <textarea id="details" name="details" rows="4" placeholder="Enter the details of your PR or PO request here..." required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit Request</button>
+            </div>
+        </form>
+        <div class="footer">
+            <p>For more information, visit our <a href="#">website</a> or contact us at <a href="mailto:support@mikihen.com">support@mikihen.com</a>.</p>
+        </div>
+    </div>
+    <script>
+        // JavaScript for Image Slider
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slides img').length;
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+
+        document.getElementById('next').addEventListener('click', () => showSlide(currentIndex + 1));
+        document.getElementById('prev').addEventListener('click', () => showSlide(currentIndex - 1));
+
+        // Automatic slide change
+        setInterval(() => showSlide(currentIndex + 1), 3000);
+
+        // JavaScript for Dynamic CSS
+        const styles = `
+            body.dark-mode {
+                background-color: #333;
+                color: #f4f4f9;
+            }
+            .container.dark-mode {
+                background-color: #444;
+                color: #f4f4f9;
+            }
+            h1.dark-mode {
+                color: #1e90ff;
+            }
+            form.dark-mode {
+                background-color: #2f4f4f;
+            }
+            form.dark-mode .form-group input,
+            form.dark-mode .form-group textarea,
+            form.dark-mode .form-group select {
+                background-color: #333;
+                color: #f4f4f9;
+            }
+            form.dark-mode .form-group button {
+                background-color: #1e90ff;
+            }
+            form.dark-mode .form-group button:hover {
+                background-color: #4682b4;
+            }
+        `;
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = styles;
+        document.head.appendChild(styleSheet);
+
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode');
+            document.querySelector('.container').classList.toggle('dark-mode');
+            document.querySelector('h1').classList.toggle('dark-mode');
+            document.querySelector('form').classList.toggle('dark-mode');
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'd') {
+                toggleDarkMode();
+            }
+        });
+
+        // Optionally, you can add a button for toggling dark mode
+        // const darkModeButton = document.createElement('button');
+        // darkModeButton.textContent = 'Toggle Dark Mode';
+        // darkModeButton.onclick = toggleDarkMode;
+        // document.body.appendChild(darkModeButton);
+    </script>
+</body>
+</html>

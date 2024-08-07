@@ -1,0 +1,130 @@
+/* General styles for the dashboard */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.sidebar ul li a.active, .sidebar ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.dashboard-sections {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dashboard-card {
+    width: 30%;
+    background-color: #f8f9fa;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+}
+
+.dashboard-card p {
+    margin: 10px 0;
+}
+
+.dashboard-card a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.approval-section, .status-section {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.view-details {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button.approve {
+    background-color: #28a745;
+    color: #fff;
+}
+
+button.disapprove {
+    background-color: #dc3545;
+    color: #fff;
+}
